@@ -39,6 +39,17 @@ Load data and test the API with **POSTMAN** by importing the following collectio
     └── Tests.postman_collection.json
 ```
 Run requests to import data and run the test requests.
+## Schema
+Field | Type
+----- | ----
+title | String
+description | String
+active | Boolean
+type | String [enum]
+created_at | Date
+started_at | Date
+stopped_at | Date
+
 ## API Reference
 HTTP Verb | Route | Description
 ----- | ------------ | -----------
