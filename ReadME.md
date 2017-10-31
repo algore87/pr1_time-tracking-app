@@ -22,8 +22,8 @@ a so called _**one language to bind them all**_ approach :).
 ## Installation
 Run a **MongoDB** server, install **node.js** and **n**ode **p**acket-**m**anager.
 ##### Project Setup
-- clone project by `git clone https://github.com/algore87/pr1_time-tracking-app.git`
-- switch to directory by `cd pr1_time-tracking-app`
+- clone project by `git clone https://gitlab.fbi.h-da.de/istalscho/715562-ha1.git`
+- switch to directory by `cd 715562-ha1`
 - install dependencies by `npm update`
 - change `mongodb://ip:port/db` in `./config/default.json` to match your database configuration
 
@@ -66,7 +66,7 @@ Route: /api/tasks?format=csv
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 algore87
+Copyright (c) 2017 Alexander Schott
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
