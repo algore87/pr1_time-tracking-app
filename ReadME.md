@@ -9,20 +9,24 @@ a so called _**one language to bind them all**_ approach :).
 ## Used Technologies
 ##### Framework:
 - express.js  
+
 ##### NoSQL Database:
 - MongoDB
+
 ##### Additional NPM Modules:
 - config
 - mongoose  
 - mongoose-auto-increment  
 - mongoose-csv
+
 ## Installation
 Run a **MongoDB** server, install **node.js** and **n**ode **p**acket-**m**anager.
 ##### Project Setup
-1) clone project by `git clone https://github.com/algore87/pr1_time-tracking-app.git`
-2) switch to directory by `cd pr1_time-tracking-app`
-3) install dependencies by `npm update`
-4) change `mongodb://ip:port/db` in `./config/default.json` to match your database configuration
+- clone project by `git clone https://github.com/algore87/pr1_time-tracking-app.git`
+- switch to directory by `cd pr1_time-tracking-app`
+- install dependencies by `npm update`
+- change `mongodb://ip:port/db` in `./config/default.json` to match your database configuration
+
 ##### Start Server
 - run ./bin/www.js by `npm start`
 - host url: `http://localhost:3000/`
