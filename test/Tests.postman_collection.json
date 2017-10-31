@@ -1,0 +1,545 @@
+{
+	"info": {
+		"name": "Tests",
+		"_postman_id": "acaf3bfa-355c-19c1-4179-e82165796d7f",
+		"description": "Tasks API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET CSV EXPORT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Blubber",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "Jolo",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks?format=csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv",
+							"equals": true
+						}
+					]
+				},
+				"description": "/tasks?format=csv"
+			},
+			"response": []
+		},
+		{
+			"name": "GET List of Tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"First Task\",\n\t\"description\" : \"My first successful task.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Status Code: 200"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Specific Task",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"First Task\",\n\t\"description\" : \"My first successful task.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				},
+				"description": "Status Code: 200 OK"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Specific Task not found",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks",
+						"10"
+					]
+				},
+				"description": "Status Code: 404 Not Found"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Change specific Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Title Changed!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks",
+						"4"
+					]
+				},
+				"description": "Status Code: 200"
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Not Found",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Change title\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks",
+						"10"
+					]
+				},
+				"description": "Status Code: 404"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE  Succesfull",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks",
+						"2"
+					]
+				},
+				"description": "Status Code: 204 No Content"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE  Not Found",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks",
+						"10"
+					]
+				},
+				"description": "Status Code: 404 Not found"
+			},
+			"response": []
+		},
+		{
+			"name": "POST  Succesfull",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"First Post\",\n\t\"description\" : \"My first successful task.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Valid POST Request."
+			},
+			"response": []
+		},
+		{
+			"name": "POST title ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Shrt\",\n\t\"description\": \"400 Bad Request. Title too short! Min 5 Chars.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Title too short."
+			},
+			"response": []
+		},
+		{
+			"name": "POST title ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Too Long Title Lorem Ipsum lorem Ipsum Lorem Ipsum lorem Ipsum Lorem Ipsum lorem Ipsum\",\n\t\"description\": \"400 Bad Request. Title too long! Max 50 Chars.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Title too long."
+			},
+			"response": []
+		},
+		{
+			"name": "POST title ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"400 Bad Request. No title submitted! Title is required.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST  start with $ ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"$First Post\",\n\t\"description\" : \"My first successful task.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Error"
+			},
+			"response": []
+		},
+		{
+			"name": "POST stopped_at ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Test StoppedTime Validation\",\n\t\"description\": \"400 Bad Request. stopped_at must be != started_at. In this case, both are the same! => ValidationError from mongoose Schema\",\n\t\"stopped_at\": {{$timestamp}}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST description ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Bad Request 400. Description too short!\",\n\t\"description\": \"Too shrt\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Description too short. Min 10 Chars."
+			},
+			"response": []
+		},
+		{
+			"name": "POST description ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"Bad Request 400. Description too long!\",\n\t\"description\": \"Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!Bad Request 400. Description too long!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Description too long. Max 200 Chars."
+			},
+			"response": []
+		},
+		{
+			"name": "POST  type ValidationError",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\" : \"TypeError\",\n\t\"description\" : \"Type has to be 'Task' or 'Event'\",\n\t\"type\" : \"Own type\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Type has to be \"Task\" or \"Event\"."
+			},
+			"response": []
+		}
+	]
+}
