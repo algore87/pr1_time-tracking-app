@@ -46,11 +46,7 @@ router.route('/tasks')
 
         Task.find({})
             .then(tasks => {
-                res.json({
-                    tasks: tasks,
-                    message: 'Show all tasks',
-                    error: false
-                });
+                res.json();
             })
             .catch(err => {
                 res.status(400);
@@ -71,11 +67,7 @@ router.route('/tasks/:id')
         Task.findById(req.params.id)
             .then(task => {
                 if (!task) throw err; // task not found
-                res.json({
-                    tasks: task,
-                    message: 'Show task with id ' + req.params.id,
-                    error: false
-                });
+                res.json(task);
             })
             .catch(err => {
                 res.status(404);
