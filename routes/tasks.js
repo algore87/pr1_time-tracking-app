@@ -46,7 +46,7 @@ router.route('/tasks')
 
         Task.find({})
             .then(tasks => {
-                res.json();
+                res.json(tasks);
             })
             .catch(err => {
                 res.status(400);
