@@ -15,6 +15,7 @@ a so called _**one language to bind them all**_ approach :).
 
 ##### Additional NPM Modules:
 - config
+- cors
 - mongoose  
 - mongoose-auto-increment  
 - mongoose-csv
@@ -63,6 +64,8 @@ Download the full list of tasks as `.csv` file by using the following request qu
 ```
 Route: /api/tasks?format=csv
 ```
+## Hints
+- Cors module is needed and applied as middleware to access the API with an external frontend.
 ## License
 The MIT License (MIT)
 
